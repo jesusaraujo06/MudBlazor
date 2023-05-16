@@ -101,13 +101,15 @@
 
 <MudDialog @bind-IsVisible="_searchDialogOpen" Options="_dialogOptions" Class="docs-gray-bg" ClassContent="docs-mobile-dialog-search">
     <DialogContent>
-        <MudAutocomplete @ref="_searchAutocomplete" T="ApiLinkServiceEntry" PopoverClass="docs-mobile-dialog-search-popover" Placeholder="Search docs" SearchFunc="Search" ValueChanged="OnSearchResult" Clearable="true" Variant="Variant.Outlined" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search">
+        <MudAutocomplete @ref="_searchAutocomplete" T="ApiLinkServiceEntry" PopoverClass="docs-mobile-dialog-search-popover" Placeholder="Search docs" SearchFunc="Search" ValueChanged="OnSearchResult" Clearable="true" Variant="Variant.Outlined" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" AutoFocus="true">
             <ItemTemplate Context="result">
                 <MudText>@result.Title</MudText> <MudText Typo="Typo.body2">@result.SubTitle</MudText>
             </ItemTemplate>
         </MudAutocomplete>
-        <div class="d-flex justify-center align-center mud-height-full pb-16">
-            <MudText Typo="Typo.body2" Class="mud-text-secondary">Nothing found, do a search</MudText>
+        <div class="d-flex flex-column justify-center align-center mud-height-full pb-16">
+            <MudText Typo="Typo.body2" Class="mud-text-secondary">Nothing found, do a search.</MudText>
+            <MudText Typo="Typo.body2" Class="mud-text-secondary">Example: Card</MudText>
         </div>
     </DialogContent>
 </MudDialog>
+
